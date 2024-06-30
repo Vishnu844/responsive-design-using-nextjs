@@ -5,6 +5,7 @@ import product from "../../../public/images/product.png";
 import schedule from "../../../public/images/schedule.png";
 import add from "../../../public/images/add.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Features = () => {
   const features = [
@@ -84,9 +85,11 @@ const Features = () => {
             venue or event tickets? Or, you know someone who should be on
             hobbycue? Go ahead and Add your Own page
           </p>
-          <button className="w-full sm:w-32 h-10 p-2 border border-primary text-sm font-semibold text-primary rounded-lg">
-            Add new
-          </button>
+          <Link href={"/pages/addNew"}>
+            <button className="w-full sm:w-32 h-10 p-2 border border-primary text-sm font-semibold text-primary rounded-lg">
+              Add new
+            </button>
+          </Link>
         </div>
       </section>
     </>

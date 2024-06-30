@@ -17,6 +17,7 @@ import google from "../../../public/images/Google.png";
 import facebook from "../../../public/images/Facebook.png";
 import password from "../../../public/images/see-password.png";
 import forgotPassword from "../../../public/images/forgot-password.png";
+import Link from "next/link";
 
 const Navbar = () => {
   const [dropdownState, setDropdownState] = useState(false);
@@ -34,12 +35,17 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className="min-w-screen h-20 bg-white px-5 sm:px-24 flex items-center justify-between shadow-md">
-        <Image
-          src={logo}
-          alt="logo"
-          className="h-8 w-32 sm:h-14 sm:w-72 object-contain"
-        />
+      <nav
+        className="min-w-screen h-20 bg-white px-5 sm:px-24 flex items-center justify-between shadow-md 
+      relative z-0"
+      >
+        <Link href={"/"}>
+          <Image
+            src={logo}
+            alt="logo"
+            className="h-8 w-32 sm:h-14 sm:w-72 object-contain"
+          />
+        </Link>
         <div className="hidden items-center sm:hidden md:hidden lg:flex">
           <input
             placeholder="Search here..."

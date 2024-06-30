@@ -18,6 +18,8 @@ module.exports = {
         primaryLight: "#F7F5F9",
         secondary: "#0096C8",
         secondaryLight: "#F7FDFF",
+        olive: "#77933C",
+        crimson: "#C0504D",
       },
     },
   },
