@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Figma to Next.js with Tailwind CSS Conversion
 
-## Getting Started
+This project showcases a design converted from Figma to a fully functional web application using Next.js and Tailwind CSS.
 
-First, run the development server:
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Demo and Design links](#Demo-and-Design-links)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Pages](#pages)
+- [Contributing](#contributing)
+
+## Introduction
+
+This project involves converting a user interface designed in Figma into a responsive web application using Next.js for the React framework and Tailwind CSS for styling. The aim is to demonstrate the process of translating static design into web pages.
+
+## Demo and Design links
+
+Check out the live demo [here](https://effortless-sopapillas-a64672.netlify.app).
+
+Check out the Figma Design [here](<https://www.figma.com/design/392G67iWd8t6WAWy6wDMPt/Basic-Responsiveness-Task?node-id=1-4235&t=AK1bRnbfja79ZnE9-0>).
+
+## Technologies Used
+
+- **Next.js**: A React framework for building server-side rendered and statically generated web applications.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Figma**: A vector graphics editor and prototyping tool which is primarily web-based.
+
+## Installation
+
+To get a local copy up and running, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Vishnu844/responsive-design-using-nextjs.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd responsive-design-using-nextjs
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+To start the development server, run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+There are two pages for this site:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Home**: https://effortless-sopapillas-a64672.netlify.app
 
-## Learn More
+- **Add New** https://effortless-sopapillas-a64672.netlify.app/pages/addNew
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
