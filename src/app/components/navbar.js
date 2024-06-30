@@ -17,6 +17,7 @@ import google from "../../../public/images/Google.png";
 import facebook from "../../../public/images/Facebook.png";
 import password from "../../../public/images/see-password.png";
 import forgotPassword from "../../../public/images/forgot-password.png";
+import hidePassword from "../../../public/images/hide-password.png";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -24,6 +25,7 @@ const Navbar = () => {
   const [menuState, setMenuState] = useState(false);
   const [signIn, setSignIn] = useState(false);
   const [joinIn, setJoinIn] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const handleSetSignIn = () => {
     setSignIn(true);
     setJoinIn(false);
@@ -32,6 +34,10 @@ const Navbar = () => {
   const handleSetJoinIn = () => {
     setJoinIn(true);
     setSignIn(false);
+  };
+  const seePassword = (e) => {
+    e.preventDefault();
+    setToggle(!toggle);
   };
   return (
     <>
@@ -172,16 +178,33 @@ const Navbar = () => {
             <div>
               <form>
                 <input
+                  type="text"
                   placeholder="Email"
                   className="w-full border border-gray-100 text-xs rounded-lg py-3 px-3 mb-4 bg-gray-200"
                 />
                 <div className="mb-3">
                   <input
+                    type={toggle ? "text" : "password"}
                     placeholder="Password"
                     className="w-full border border-gray-100 text-xs rounded-lg py-3 px-3 bg-gray-200"
                   />
-                  <button className="relative float-right bottom-7 mr-3">
-                    <Image src={password} alt="see-password" />
+                  <button
+                    className="relative float-right bottom-7 mr-3"
+                    onClick={(e) => seePassword(e)}
+                  >
+                    {toggle ? (
+                      <Image
+                        src={password}
+                        alt="see-password"
+                        className="object-contain h-4"
+                      />
+                    ) : (
+                      <Image
+                        src={hidePassword}
+                        alt="hide-password"
+                        className="object-contain h-4"
+                      />
+                    )}
                   </button>
                   <div className="w-full flex items-center justify-between">
                     <div className="w-44 flex gap-1">
@@ -235,12 +258,27 @@ const Navbar = () => {
                 />
                 <div className="mb-3">
                   <input
-                    type="password"
+                    type={toggle ? "text" : "password"}
                     placeholder="Password"
                     className="w-full border border-gray-100 text-xs rounded-lg py-3 px-3 bg-gray-200"
                   />
-                  <button className="relative float-right bottom-7 mr-3">
-                    <Image src={password} alt="see-password" />
+                  <button
+                    className="relative float-right bottom-7 mr-3"
+                    onClick={(e) => seePassword(e)}
+                  >
+                    {toggle ? (
+                      <Image
+                        src={password}
+                        alt="see-password"
+                        className="object-contain h-4"
+                      />
+                    ) : (
+                      <Image
+                        src={hidePassword}
+                        alt="hide-password"
+                        className="object-contain h-4"
+                      />
+                    )}
                   </button>
                   <div className="w-full flex items-center justify-between">
                     <div className="flex gap-2">

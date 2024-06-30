@@ -6,11 +6,13 @@ import google from "../../../public/images/Google.png";
 import facebook from "../../../public/images/Facebook.png";
 import password from "../../../public/images/see-password.png";
 import forgotPassword from "../../../public/images/forgot-password.png";
+import hidePassword from "../../../public/images/hide-password.png";
 import Image from "next/image";
 
 const HeroSection = () => {
   const [signIn, setSignIn] = useState(false);
   const [joinIn, setJoinIn] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const handleSetSignIn = () => {
     setSignIn(true);
     setJoinIn(false);
@@ -19,6 +21,11 @@ const HeroSection = () => {
   const handleSetJoinIn = () => {
     setJoinIn(true);
     setSignIn(false);
+  };
+
+  const seePassword = (e) => {
+    e.preventDefault();
+    setToggle(!toggle);
   };
   return (
     <div className="min-w-screen h-screen-sm grid pt-8 sm:pt-24 gap-x-32 gap-y-20 hero-section px-5 sm:px-24 bg-primaryLight">
@@ -89,16 +96,30 @@ const HeroSection = () => {
           <div>
             <form>
               <input
+                type="text"
                 placeholder="Email"
                 className="w-full border border-gray-100 text-xs rounded-lg py-3 px-3 mb-4"
               />
               <div className="mb-3">
                 <input
+                  type={toggle ? "text" : "password"}
                   placeholder="Password"
                   className="w-full border border-gray-100 text-xs rounded-lg py-3 px-3"
                 />
-                <button className="relative float-right bottom-7 mr-3">
-                  <Image src={password} alt="see-password" />
+                <button className="relative float-right bottom-7 mr-3" onClick={(e) => seePassword(e)}>
+                  {toggle ? (
+                    <Image
+                      src={password}
+                      alt="see-password"
+                      className="object-contain h-4"
+                    />
+                  ) : (
+                    <Image
+                      src={hidePassword}
+                      alt="hide-password"
+                      className="object-contain h-4"
+                    />
+                  )}
                 </button>
                 <div className="w-full flex items-center justify-between">
                   <div className="w-44 flex gap-1">
@@ -128,7 +149,7 @@ const HeroSection = () => {
         <div className={signIn ? "flex flex-col gap-7" : "hidden"}>
           <div>
             <button className="w-full h-10 border border-primary rounded-lg flex items-center py-3 px-6 gap-20  mb-4 mt-8">
-              <Image src={google} alt="google" className="object-contain"/>
+              <Image src={google} alt="google" className="object-contain" />
               <p className="font-semibold text-xs">Continue with Google</p>
             </button>
             <button className="w-full h-10 border border-primary rounded-lg flex items-center gap-20 py-3 px-6">
@@ -152,12 +173,24 @@ const HeroSection = () => {
               />
               <div className="mb-3">
                 <input
-                  type="password"
+                  type={toggle ? "text" : "password"}
                   placeholder="Password"
                   className="w-full border border-gray-100 text-xs rounded-lg py-3 px-3"
                 />
-                <button className="relative float-right bottom-7 mr-3">
-                  <Image src={password} alt="see-password" />
+                <button className="relative float-right bottom-7 mr-3" onClick={(e) => seePassword(e)}>
+                {toggle ? (
+                    <Image
+                      src={password}
+                      alt="see-password"
+                      className="object-contain h-4"
+                    />
+                  ) : (
+                    <Image
+                      src={hidePassword}
+                      alt="hide-password"
+                      className="object-contain h-4"
+                    />
+                  )}
                 </button>
                 <div className="w-full flex items-center justify-between">
                   <div className="flex gap-2">
